@@ -1,0 +1,70 @@
+
+
+<div class="bg-blue-700 h-auto text-white py-24 px-10 object-fill">
+       <div class="md:w-1/2">
+        <p class="font-bold text-sm uppercase">Servicio</p>
+        <p class="text-3xl font-bold">Catalogo</p>
+        <p class="text-2xl mb-10 leading-none">Administrador de stock</p>
+        <a href="#addproduct" class="bg-purple-500 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800">Agregar Productos</a>
+        </div>  
+    </div>
+
+
+
+
+
+<div class="w-full border-y-2 border-grey-300">
+
+<div  class="font-[sans-serif]">
+      <div class="p-4 mx-auto">
+         <div id="containerproducts" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
+          <!--Aca la productList viene a travez de manipulacion de DOM.-->
+        </div>
+      </div>
+    </div>
+
+</div>
+
+
+<!--DIV FORM -->
+
+
+<div id="addproduct" class="grid h-screen place-content-center bg-blue-700 text-gray-300">
+  
+  <div class="mb-10 text-center text-indigo-400">
+    <h1 class="text-2xl text-white font-bold tracking-widest">STOCK</h1>
+    <p><span class="font-bold">Agregar</span> nuevos <span class="font-bold">Productos</span></p>
+  </div>
+  
+  <form class="flex flex-col items-center justify-center space-y-6"
+  >
+    
+    <input type="text" id="input-title"  placeholder="Titulo" class="w-80 appearance-none rounded-full border-0 bg-slate-800/50 p-2 px-4 focus:bg-slate-800 focus:ring-2 focus:ring-orange-500" required/>
+    <input type="text" id="input-description"  placeholder="Description" class="w-80 appearance-none rounded-full border-0 bg-slate-800/50 p-2 px-4 focus:bg-slate-800 focus:ring-2 focus:ring-orange-500" required/>
+    <input type="text" id="input-code"  placeholder="Codigo" class="w-80 appearance-none rounded-full border-0 bg-slate-800/50 p-2 px-4 focus:bg-slate-800 focus:ring-2 focus:ring-orange-500" required/>
+    <div class= "w-80 flex flex-row evenly" >
+      <input type="number" id="input-price"  placeholder="Precio" class="w-3/6 appearance-none rounded-full border-0 bg-slate-800/50 p-2 px-4 focus:bg-slate-800 focus:ring-2 focus:ring-orange-500" required/>
+      <input type="number" id="input-stock"  placeholder="Stock" class="w-3/6 appearance-none rounded-full border-0 bg-slate-800/50 p-2 px-4 focus:bg-slate-800 focus:ring-2 focus:ring-orange-500" required/>
+    </div>
+    <select id="input-status" 
+      class="w-80 appearance-none rounded-full border-0 bg-slate-800/50 p-2 px-4 focus:bg-slate-800 focus:ring-2 focus:ring-orange-500" required/>
+      <option class="w-80 appearance-none rounded-full border-0 bg-slate-800/50 p-2 px-4 focus:bg-slate-800 focus:ring-2 focus:ring-orange-500" value="" disabled selected>Status</option>
+      <option class="w-80 appearance-none rounded-full border-0 bg-slate-800/50 p-2 px-4 focus:bg-slate-800 focus:ring-2 focus:ring-orange-500"  value="true">Activo</option>
+      <option class="w-80 appearance-none rounded-full border-0 bg-slate-800/50 p-2 px-4 focus:bg-slate-800 focus:ring-2 focus:ring-orange-500"  value="false">Inactivo</option>
+    </select>
+
+
+    <input 
+      id="input-files" 
+      class="w-80 appearance-none rounded-full border-0 bg-slate-800/50 p-2 px-4 focus:bg-slate-800 focus:ring-2 focus:ring-orange-500" 
+      type="file" disabled />
+    
+    <button type="button" id="btnEnviar" class="rounded-full bg-indigo-500 p-2 px-10 text-white hover:bg-orange-500">Aceptar</button>
+  </div>
+</form>
+
+<!--Scripts-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.min.js"></script>
+<script src="utils.js"></script>
+<script src="realTimeProducts.js"></script>
